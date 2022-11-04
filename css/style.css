@@ -1,0 +1,1279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  /* font-family: 'Ubuntu Condensed', sans-serif; */
+  /* background-color: #ecb750;#872901 */
+  background-color: #ecb750;
+  /* height: 500vh; */
+  color: #333;
+}
+
+/* Navbar */
+
+#mainNav {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ecb750;
+  z-index: 3;
+}
+
+.navBorder {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #9c6700;
+}
+
+.navBorder.active {
+  display: block;
+}
+
+#mainNav .logo {
+  display: inline-block;
+  margin-left: 8vw;
+  font-size: 20px;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  background-color: #872901;
+  padding: 5px 12px;
+  border-radius: 20px;
+  /* overflow: hidden; */
+}
+
+#mainNav .logo:hover {
+  background-color: #333;
+}
+
+#mainNav .longMenu {
+  display: none;
+}
+
+#mainNav2 {
+  display: flex;
+  position: fixed;
+  top: 10vh;
+  right: -100vw;
+  width: 100vw;
+  height: 90vh;
+  flex-direction: column;
+  background-color: #ecb750;
+  transition: 0.3s;
+  z-index: 3;
+}
+
+.shortMenu li {
+  display: flex;
+  position: relative;
+  list-style: none;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.shortMenu li a {
+  display: inline-block;
+  width: 90%;
+  padding: 20px 15px;
+  overflow: hidden;
+  font-size: 20px;
+  background-color: #872901;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+.shortMenu li a i {
+  margin-right: 2vw;
+}
+
+/* Short Menu Animation */
+.shortMenu li:nth-child(1) a {
+  transition-delay: 1s;
+}
+
+#mainNav2.active.shortMenu {
+  transition: 0.3s;
+  right: 0;
+}
+
+/* Burger */
+
+.burger {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 8vw;
+  cursor: pointer;
+}
+
+.burger span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 6px;
+  background-color: #872901;
+  border-radius: 3px;
+  transition: transform 0.2s 0.2s ease-in-out, top 0.2s ease-in-out, opacity 0.1s 0.2s ease-in-out;
+}
+
+.hamLine1 {
+  top: calc(15% + 3px);
+}
+
+.burger.active .hamLine1,
+.burger.active .hamLine3 {
+  top: calc(50% - 3px);
+}
+
+.burger.active .hamLine1 {
+  transform: rotate(45deg);
+}
+
+.hamLine2 {
+  top: 50%;
+}
+
+.burger.active .hamLine2 {
+  opacity: 0;
+}
+
+.hamLine3 {
+  top: calc(85% - 3px);
+}
+
+.burger.active .hamLine3 {
+  transform: rotate(135deg);
+}
+
+/* Landscape */
+
+.landingPage {
+  overflow: hidden;
+  height: 150vh;
+}
+
+.mainWrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 35vh;
+  text-align: center;
+}
+
+.mainWrapper h1 {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  width: 100%;
+  font-size: 25px;
+  color: #872901;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: bold;
+  text-transform: uppercase;
+}
+
+.mainWrapper p {
+  margin-top: 5%;
+  font-size: 10px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.btnBig {
+  margin: 10% 20px 0;
+  padding: 15px 20px;
+  border: none;
+  box-shadow: 0 0 0 3px #ecb750, 0 0 0 6px crimson;
+  background-color: crimson;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  text-decoration: bold;
+  transition: 0.2s;
+  text-align: center;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.btnBig a {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  border-radius: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.2s;
+  text-align: center;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.imgWrapper {
+  position: relative;
+  top: 50vh;
+  width: 100%;
+  height: 50vh;
+  /* overflow: hidden; */
+}
+
+.imgWrapper img {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.HoneyComb {
+  top: 100%;
+  left: 0;
+  width: 200%;
+  transform: translate(-25%, -52%);
+  opacity: 0.8;
+  overflow: visible;
+}
+
+.honeyAndJar {
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+/* About */
+
+
+.about {
+  position: relative;
+  height: 700px;
+  background-color: #333;
+}
+
+.beekeeper {
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 70%;
+  filter: grayscale(1);
+  border-radius: 20px;
+}
+
+.aboutWrapper {
+  padding-top: 25px;
+  color: #ddd;
+}
+
+.aboutWrapper h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.aboutWrapper h1 i {
+  margin-right: 10px;
+}
+
+.aboutWrapper h1:nth-of-type(1) {
+  margin-top: 200px;
+}
+
+.aboutWrapper h1:nth-of-type(2) {
+  margin-top: 40px;
+}
+
+.aboutWrapper p {
+  margin: 20px 20px;
+  padding: 0 15px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+
+/* Shop */
+.shop h1 {
+  margin: 15% 0 10%;
+  font-size: 35px;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #872901;
+}
+
+.wrapContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.artWrapper {
+  display: flex;
+  max-width: 1400px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.art {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-basis: 280px;
+  height: 533px;
+  margin-top: 20px;
+  border: #333 solid 2px;
+  background-color: #efbf5f;
+  border-radius: 6px;
+}
+
+.artImgWrap {
+  padding: 0 40px;
+  width: 280px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.artImgWrap img {
+  width: 200px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+}
+
+.art h1 {
+  margin: 8% 0 5%;
+  padding-bottom: 5%;
+  border-bottom: #333 solid 1px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 23px;
+  color: #333;
+}
+
+.art .shopTxtWrap {
+  position: relative;
+  padding: 0 40px;
+}
+
+.art p {
+  padding-left: 30px;
+  hyphens: auto;
+}
+
+.art i {
+  position: absolute;
+  top: 20%;
+}
+
+.btnSmall {
+  width: 80%;
+  margin: 0 20px 6px;
+  padding: 10px 15px;
+  border: none;
+  box-shadow: 0 0 0 2px #efbf5f, 0 0 0 5px crimson;
+  background-color: crimson;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  text-decoration: bold;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+
+/* Contact */
+
+.contact {
+  margin-top: 50px;
+  background-color: #872901;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+.contH1 {
+  margin-bottom: 25px;
+  padding-top: 40px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 35px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.contactWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 700px;
+}
+
+.contMedia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 180px;
+}
+
+.contMedia span {
+  width: 80%;
+  padding: 8px 10px;
+  display: inline-block;
+  font-size: 20px;
+  background-color: #efbf5f;
+  color: #333;
+  border-radius: 20px;
+}
+
+.contForm {
+  height: 500px;
+}
+
+.formPromo {
+  margin: 10px 0 25px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 450px;
+}
+
+.form * {
+  display: block;
+  width: 80%;
+}
+
+.form label {
+  font-size: 18px;
+}
+
+.form input {
+  height: 35px;
+  border-radius: 8px;
+  border: none;
+  background-color: #efbf5f;
+}
+
+.form textarea {
+  border-radius: 8px;
+  background-color: #efbf5f;
+  border: none;
+}
+
+.form .btnForm {
+  background-color: crimson;
+  height: 50px;
+  color: #fff;
+  font-size: 18px;
+}
+
+footer {
+  padding: 40px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+/* MEDIA */
+/* MEDIA */
+/* MEDIA */
+/* MEDIA */
+/* MEDIA */
+
+
+
+
+
+@media (min-width: 320px) and (orientation: landscape) {
+
+  #mainNav {
+    padding: 30px 15px;
+  }
+
+  #mainNav .logo {
+    font-size: 20px;
+    padding: 8px 15px;
+  }
+
+  #mainNav2 {
+    right: -50vw;
+    width: 50vw;
+    top: 18.5vh;
+    height: 81.5vh;
+    border-left: 1px solid #9c6700;
+  }
+
+  .shortMenu li a {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  /* Landing */
+
+  .mainWrapper {
+    width: 50%;
+    height: 80vh;
+    left: 0;
+    transform: translate(0);
+  }
+
+  .mainWrapper h1 {
+    margin-top: 30px;
+  }
+
+  .mainWrapper p {
+    font-size: 13px;
+  }
+
+  .imgWrapper {
+    left: 50vw;
+    top: 20vh;
+    width: 50%;
+    height: 80vh;
+  }
+
+  .honeyAndJar {
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+  }
+
+  .HoneyComb {
+    top: -30%;
+    left: -10%;
+    width: 200%;
+    transform: translate(0);
+  }
+
+  /* About */
+
+
+  .about {
+    height: 200px;
+    background-color: transparent;
+  }
+
+  .beekeeper {
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    min-width: 40%;
+    z-index: 1;
+  }
+
+  .aboutWrapper {
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    padding-top: 10%;
+    background-color: #333;
+    padding: 5% 10% 5% 1%;
+    border-radius: 20px;
+  }
+
+  .aboutWrapper h1 {
+    font-size: 16px;
+  }
+
+  .aboutWrapper h1:nth-of-type(1) {
+    margin-top: 0;
+  }
+
+  .aboutWrapper h1:nth-of-type(2) {
+    margin-top: 20px;
+  }
+
+  .aboutWrapper p {
+    margin: 10px 10px;
+    font-size: 12px;
+  }
+
+
+  /* Shop */
+
+
+  .shop h1 {
+    margin: 35% 0 10%;
+  }
+
+  .artWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .art {
+    margin: 20px 20px 0;
+  }
+
+  .artImgWrap {
+    padding: 0 20px;
+    width: 500px;
+    height: 200px;
+  }
+
+  .art h1 {
+    padding-bottom: 3%;
+    margin: 7% 0 5%;
+    font-size: 22px;
+  }
+
+  .art .shopTxtWrap {
+    position: relative;
+    margin-bottom: 30px;
+    top: -37.5%;
+    left: 20%;
+    width: 60%;
+  }
+
+  .btnSmall {
+    margin: -100px 20px 30px;
+  }
+}
+
+@media (min-width: 360px) and (orientation: portrait) {
+  .about {
+    position: relative;
+    height: 800px;
+    background-color: #333;
+  }
+
+  .beekeeper {
+    top: -20%;
+  }
+
+  .aboutWrapper h1:nth-of-type(1) {
+    margin-top: 300px;
+  }
+}
+
+@media (min-height: 600px) and (orientation: portrait) {
+
+  #mainNav .logo {
+    font-size: 22px;
+    padding: 6px 15px;
+  }
+
+  .shortMenu li a {
+    font-size: 23px;
+    padding: 30px 15px;
+  }
+
+  .mainWrapper p {
+    font-size: 13px;
+  }
+
+  .landingPage {
+    height: 135vh;
+  }
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+  #mainNav {
+    padding: 30px 15px;
+  }
+
+  #mainNav .logo {
+    font-size: 22px;
+    padding: 8px 20px;
+  }
+
+  #mainNav2 {
+    right: -50vw;
+    width: 50vw;
+    top: 20vh;
+    height: 80vh;
+  }
+
+  .shortMenu li a {
+    font-size: 20px;
+    padding: 10px 15px;
+  }
+
+  /* About */
+
+}
+
+@media (min-height: 768px) and (orientation: portrait) {
+  #mainNav2 {
+    top: 10vh;
+    height: 90vh;
+  }
+
+  #mainNav .logo {
+    font-size: 25px;
+    padding: 9px 15px;
+  }
+
+  .shortMenu li a {
+    font-size: 23px;
+    padding: 30px 15px;
+  }
+
+  .burger {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* Landing */
+  .mainWrapper h1 {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    width: 100%;
+    font-size: 30px;
+    color: #872901;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .mainWrapper p {
+    font-size: 16px;
+  }
+
+  .btnBig {
+    font-size: 25px;
+  }
+
+  /* Shop */
+
+  .art {
+    flex-basis: 320px;
+    height: 600px;
+  }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+
+  .landingPage {
+    height: 200vh;
+  }
+
+  /* Landing */
+  .mainWrapper h1 {
+    font-size: 28px;
+  }
+
+  .mainWrapper p {
+    font-size: 15px;
+  }
+
+
+  /* Shop */
+
+
+  .shop h1 {
+    margin: 35% 0 5%;
+    font-size: 40px;
+  }
+
+  .art {
+    margin: 20px 0 0 0;
+    width: 600px;
+    flex-basis: 300px;
+  }
+
+  .artImgWrap {
+    margin: 0 0 30px;
+    padding: 0 20px;
+    width: 500px;
+    height: 200px;
+  }
+
+  .art h1 {
+    padding-bottom: 3%;
+    margin: 5% 0;
+    font-size: 22px;
+  }
+
+  .art .shopTxtWrap {
+    position: relative;
+    margin-bottom: 30px;
+    top: -45%;
+    left: 22.5%;
+    width: 60%;
+  }
+
+  .btnSmall {
+    margin: -140px 20px 30px;
+  }
+}
+
+@media (min-height: 1024px) and (orientation: portrait) {
+  .mainWrapper h1 {
+    font-size: 40px;
+  }
+
+  .mainWrapper p {
+    font-size: 20px;
+  }
+
+  .btnBig {
+    padding: 30px 60px;
+    font-size: 30px;
+  }
+
+  .honeyAndJar {
+    width: 70%;
+  }
+
+  .HoneyComb {
+    top: -30%;
+    left: -50%;
+    transform: translate(0);
+  }
+
+  .landingPage {
+    height: 170vh;
+  }
+
+  /* About */
+
+
+  .beekeeper {
+    top: -35%;
+    min-width: 50%;
+  }
+
+  .aboutWrapper h1 {
+    font-size: 30px;
+  }
+
+  .aboutWrapper h1:nth-of-type(1) {
+    margin-top: 40%;
+  }
+
+  .aboutWrapper p {
+    padding: 0 120px;
+  }
+
+
+  /* Shop */
+
+
+  .shop h1 {
+    margin: 10% 0 0;
+    padding: 0;
+  }
+
+  .art {
+    margin-top: 60px;
+  }
+
+
+  /* Contact */
+
+
+  .contMedia span {
+    font-size: 22px;
+  }
+
+  .form input {
+    height: 45px;
+    border-radius: 8px;
+    border: none;
+    background-color: #efbf5f;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  #mainNav .logo {
+    font-size: 30px;
+    padding: 10px 15px;
+  }
+
+  #mainNav .longMenu {
+    list-style: none;
+    display: flex;
+  }
+
+  #mainNav .longMenu li a {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    margin-right: 4vw;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #333;
+    transition: 0.3s;
+  }
+
+  #mainNav .longMenu li a:hover {
+    color: #872901;
+  }
+
+  #mainNav .longMenu li:last-child a {
+    margin-right: 8vw;
+  }
+
+  #mainNav .longMenu li a::after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    border-bottom: #872901 3px solid;
+    transition: 0.3s;
+
+  }
+
+  #mainNav .longMenu li a:hover::after {
+    left: 0;
+  }
+
+  #mainNav .longMenu li a i {
+    margin-right: 6px;
+  }
+
+  .burger,
+  #mainNav2 {
+    display: none;
+  }
+
+  /* Landning */
+  .mainWrapper {
+    width: 50%;
+    top: 25vh;
+    height: 50vh;
+    left: 0;
+    transform: translate(0);
+  }
+
+  .mainWrapper h1 {
+    font-size: 40px;
+  }
+
+  .mainWrapper p {
+    font-size: 20px;
+  }
+
+  .btnBig {
+    padding: 30px 60px;
+    font-size: 30px;
+    box-shadow: 0 0 0 6px #ecb750, 0 0 0 12px crimson;
+  }
+
+  .btnBig:hover {
+    box-shadow: 0 0 0 9px #ecb750, 0 0 0 18px crimson;
+  }
+
+  .honeyAndJar {
+    width: 90%;
+  }
+
+  .HoneyComb {
+    top: -10%;
+  }
+
+  .landingPage {
+    height: 150vh;
+  }
+
+  /* About */
+  .about {
+    height: 0;
+  }
+
+  .beekeeper {
+    top: 50%;
+    left: 10%;
+    min-width: 40%;
+  }
+
+  .aboutWrapper {
+    left: 40%;
+    padding: 5% 1% 5% 10%;
+  }
+
+  .aboutWrapper h1 {
+    font-size: 32px;
+  }
+
+  .aboutWrapper h1:nth-of-type(1) {
+    margin-top: 0;
+  }
+
+  .aboutWrapper h1:nth-of-type(2) {
+    margin-top: 60px;
+  }
+
+  .aboutWrapper p {
+    margin: 20px;
+    font-size: 20px;
+  }
+
+
+  /* Shop */
+
+
+  .shop h1 {
+    margin: 40% 0 5%;
+    font-size: 45px;
+  }
+
+  .artWrapper {
+    flex-direction: row;
+  }
+
+  .art {
+    padding: 20px 0 40px;
+    flex-basis: 300px;
+    height: 600px;
+  }
+
+  .artImgWrap {
+    padding: 0 40px;
+    width: 280px;
+  }
+
+  .artImgWrap img {
+    width: 200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+  }
+
+  .art h1 {
+    margin: 8% 0 5%;
+    padding-bottom: 5%;
+    font-size: 23px;
+  }
+
+  .art .shopTxtWrap {
+    position: relative;
+    padding: 0 40px;
+    top: auto;
+    left: auto;
+    width: auto;
+  }
+
+  .art p {
+    font-size: 18px;
+  }
+
+  .btnSmall {
+    margin: 0 20px 6px;
+  }
+
+
+  /* Contact */
+
+  .contact {
+    margin-top: 100px;
+  }
+
+  .contH1 {
+    margin-bottom: 0;
+    padding: 40px 0 20px;
+    font-size: 45px;
+    border-bottom: #973911 solid 2px;
+  }
+
+  .contactWrap {
+    flex-direction: row;
+    height: 550px;
+    margin-top: 100px;
+  }
+
+  .contMedia {
+    width: 40%;
+    height: 250px;
+    margin-top: 50px;
+  }
+
+  .contMedia span {
+    padding: 15px 20px;
+    font-size: 22px;
+  }
+
+  .contForm {
+    width: 70%;
+  }
+
+  .formPromo {
+    font-size: 30px;
+  }
+
+  .form label {
+    font-size: 20px;
+  }
+
+}
+
+@media (min-width: 1400px) and (orientation: landscape) {
+  .mainWrapper h1 {
+    font-size: 50px;
+  }
+
+  .mainWrapper p {
+    padding: 0 10%;
+    font-size: 20px;
+  }
+
+  .btnBig {
+    margin-left: 10%;
+    width: 80%;
+    padding: 40px 60px;
+    font-size: 30px;
+  }
+
+  .honeyAndJar {
+    width: 80%;
+  }
+
+  .HoneyComb {
+    top: -30%;
+  }
+
+  .landingPage {
+    height: 170vh;
+  }
+
+  /* About */
+  .about {
+    margin-top: -200px;
+    height: 0;
+  }
+
+  .beekeeper {
+    top: -30%;
+    left: 12%;
+    min-width: 23%;
+  }
+
+  .aboutWrapper {
+    top: -10%;
+    left: 28%;
+    width: 60%;
+    padding: 5% 1% 5% 10%;
+  }
+
+  .aboutWrapper h1 {
+    margin-left: 20px;
+    font-size: 40px;
+    text-align: left;
+  }
+
+  .aboutWrapper h1:nth-of-type(1) {
+    margin-top: 0;
+  }
+
+  .aboutWrapper h1:nth-of-type(2) {
+    margin-top: 60px;
+  }
+
+  .aboutWrapper p {
+    margin: 20px;
+    font-size: 25px;
+  }
+
+
+  /* Shop */
+
+
+  .shop h1 {
+    margin: 400px 0 5%;
+  }
+
+  .art {
+    padding: 20px 0 40px;
+    flex-basis: 400px;
+    height: 700px;
+  }
+
+  .artImgWrap {
+    padding: 0;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .artImgWrap img {
+    width: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+  }
+
+  .art h1 {
+    margin: 8% 0 5%;
+    padding-bottom: 5%;
+    font-size: 30px;
+  }
+
+
+  /* Contact */
+
+  .contactWrap {
+    height: 650px;
+  }
+
+  .contMedia {
+    width: 40%;
+    height: 250px;
+    margin-top: 50px;
+  }
+
+  .contMedia span {
+    padding: 15px 20px;
+    font-size: 22px;
+  }
+
+  .form {
+    height: 550px;
+  }
+
+  .form input {
+    height: 50px;
+  }
+
+
+  .form label {
+    font-size: 24px;
+  }
+}
